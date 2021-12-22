@@ -1,0 +1,13 @@
+#https://code.visualstudio.com/docs/containers/quickstart-python
+version: '3.3'
+services:
+  monitor-log:
+    image: monitor-log
+    container_name: monitoring-log
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - 2921:80
+    volumes:
+      - ./src:/code
