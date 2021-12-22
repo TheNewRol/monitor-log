@@ -6,7 +6,7 @@ services:
     container_name: monitoring-log
     build:
       context: .
-      dockerfile: ./docker/Dockerfile
+      dockerfile: ./Dockerfile
     ports:
       - 2921:80
     volumes:
