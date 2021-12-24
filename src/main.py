@@ -18,8 +18,9 @@ app.add_middleware(
 
 @app.get("/")
 async def run():
-    mydata = logGenerator("hola")
-    return EventSourceResponse(mydata)
+    #mydata = logGenerator("hola")
+    #return EventSourceResponse({"hola":"hola"})
+    return {"hola":"hola"}
 
 async def logGenerator(request):
     yield ({"hola": "hola"})
