@@ -18,10 +18,9 @@ app.add_middleware(
 
 @app.get("/")
 async def run():
-    #mydata = logGenerator("hola")
-    #return EventSourceResponse({"hola":"hola"})
-    return {"hola":"hola"}
+    mydata = logGenerator()
+    return EventSourceResponse(mydata)
 
-async def logGenerator(request):
-    yield ({"hola": "hola"})
-    time.sleep(0.5)
+def logGenerator():
+    data = Monitor("webscssl.error.log");
+    yield from data.getLine()
